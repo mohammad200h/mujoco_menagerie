@@ -1,0 +1,184 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+
+  <default>
+    <geom type="mesh"/>
+    <general biastype="affine" gainprm="20" biasprm="0 -20 1"/>
+    <default class="ff_main">
+      <joint armature="0.01"/>
+      <general biastype="none" gainprm="1" biasprm="0 0 0"/>
+    </default>
+    <default class="mf_main">
+      <joint armature="0.01"/>
+      <general biastype="none" gainprm="1" biasprm="0 0 0"/>
+    </default>
+    <default class="rf_main">
+      <joint armature="0.01"/>
+      <general biastype="none" gainprm="1" biasprm="0 0 0"/>
+    </default>
+    <default class="th_main">
+      <joint armature="0.01"/>
+      <general biastype="none" gainprm="1" biasprm="0 0 0"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="black" rgba="0.2 0.2 0.2 1"/>
+    <material name="ff_black" rgba="0.2 0.2 0.2 1"/>
+    <material name="mf_black" rgba="0.2 0.2 0.2 1"/>
+    <material name="rf_black" rgba="0.2 0.2 0.2 1"/>
+    <material name="th_black" rgba="0.2 0.2 0.2 1"/>
+    <mesh name="palm_lower_left" file="./assets/palm_lower_left.stl"/>
+    <mesh name="ff_mcp_joint" file="./assets/mcp_joint.stl"/>
+    <mesh name="ff_pip" file="./assets/pip.stl"/>
+    <mesh name="ff_dip" file="./assets/dip.stl"/>
+    <mesh name="ff_fingertip" file="./assets/fingertip.stl"/>
+    <mesh name="mf_mcp_joint" file="./assets/mcp_joint.stl"/>
+    <mesh name="mf_pip" file="./assets/pip.stl"/>
+    <mesh name="mf_dip" file="./assets/dip.stl"/>
+    <mesh name="mf_fingertip" file="./assets/fingertip.stl"/>
+    <mesh name="rf_mcp_joint" file="./assets/mcp_joint.stl"/>
+    <mesh name="rf_pip" file="./assets/pip.stl"/>
+    <mesh name="rf_dip" file="./assets/dip.stl"/>
+    <mesh name="rf_fingertip" file="./assets/fingertip.stl"/>
+    <mesh name="th_pip" file="./assets/pip.stl"/>
+    <mesh name="th_thumb_pip" file="./assets/thumb_pip.stl"/>
+    <mesh name="th_thumb_dip" file="./assets/thumb_dip.stl"/>
+    <mesh name="th_thumb_fingertip" file="./assets/thumb_fingertip.stl"/>
+  </asset>
+
+  <worldbody>
+    <light name="top" pos="0 0 1" dir="0 0 -1"/>
+    <body name="palm_lower" pos="0 0 0.1" quat="0 1 0 0">
+      <geom pos="-0.0955742 -0.11704 0.0207796" quat="0 0 0.707107 0.707107" contype="0" conaffinity="0" group="2" density="0" material="black" mesh="palm_lower_left"/>
+      <geom pos="-0.0955742 -0.11704 0.0207796" quat="0 0 0.707107 0.707107" group="3" mesh="palm_lower_left"/>
+      <frame name="FirstFinger">
+        <body name="ff_world" pos="-0.0825742 -0.08574 0.00780089" quat="0.5 0.5 0.5 -0.5">
+          <body name="ff_mcp_joint">
+            <joint name="ff_j0" pos="0 0 0" axis="0 0 -1" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" contype="0" conaffinity="0" group="2" density="0" material="ff_black" mesh="ff_mcp_joint"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" group="3" mesh="ff_mcp_joint"/>
+            <body name="ff_pip" pos="-0.0122 0.0381 0.0145" quat="0.5 -0.5 -0.5 0.5">
+              <joint name="ff_j1" pos="0 0 0" axis="0 0 -1" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" contype="0" conaffinity="0" group="2" density="0" material="ff_black" mesh="ff_pip"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" group="3" mesh="ff_pip"/>
+              <body name="ff_dip" pos="0.015 0.0143 -0.013" quat="0.5 0.5 -0.5 0.5">
+                <joint name="ff_j2" pos="0 0 0" axis="0 0 -1" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" contype="0" conaffinity="0" group="2" density="0" material="ff_black" mesh="ff_dip"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" group="3" mesh="ff_dip"/>
+                <body name="ff_fingertip" pos="-4.08806e-09 -0.0361 0.0002">
+                  <joint name="ff_j3" pos="0 0 0" axis="0 0 -1" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" contype="0" conaffinity="0" group="2" density="0" material="ff_black" mesh="ff_fingertip"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" group="3" mesh="ff_fingertip"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </frame>
+      <frame name="MiddleFinger">
+        <body name="mf_world" pos="-0.0825742 -0.04029 0.00780089" quat="0.5 0.5 0.5 -0.5">
+          <body name="mf_mcp_joint">
+            <joint name="mf_j0" pos="0 0 0" axis="0 0 -1" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" contype="0" conaffinity="0" group="2" density="0" material="mf_black" mesh="mf_mcp_joint"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" group="3" mesh="mf_mcp_joint"/>
+            <body name="mf_pip" pos="-0.0122 0.0381 0.0145" quat="0.5 -0.5 -0.5 0.5">
+              <joint name="mf_j1" pos="0 0 0" axis="0 0 -1" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" contype="0" conaffinity="0" group="2" density="0" material="mf_black" mesh="mf_pip"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" group="3" mesh="mf_pip"/>
+              <body name="mf_dip" pos="0.015 0.0143 -0.013" quat="0.5 0.5 -0.5 0.5">
+                <joint name="mf_j2" pos="0 0 0" axis="0 0 -1" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" contype="0" conaffinity="0" group="2" density="0" material="mf_black" mesh="mf_dip"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" group="3" mesh="mf_dip"/>
+                <body name="mf_fingertip" pos="-4.08806e-09 -0.0361 0.0002">
+                  <joint name="mf_j3" pos="0 0 0" axis="0 0 -1" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" contype="0" conaffinity="0" group="2" density="0" material="mf_black" mesh="mf_fingertip"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" group="3" mesh="mf_fingertip"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </frame>
+      <frame name="RingFinger">
+        <body name="rf_world" pos="-0.0825742 0.00515999 0.00780089" quat="0.5 0.5 0.5 -0.5">
+          <body name="rf_mcp_joint">
+            <joint name="rf_j0" pos="0 0 0" axis="0 0 -1" range="-0.314 2.23" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" contype="0" conaffinity="0" group="2" density="0" material="rf_black" mesh="rf_mcp_joint"/>
+            <geom pos="0.0084069 0.00776624 0.0146574" quat="1 0 0 0" group="3" mesh="rf_mcp_joint"/>
+            <body name="rf_pip" pos="-0.0122 0.0381 0.0145" quat="0.5 -0.5 -0.5 0.5">
+              <joint name="rf_j1" pos="0 0 0" axis="0 0 -1" range="-1.047 1.047" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" contype="0" conaffinity="0" group="2" density="0" material="rf_black" mesh="rf_pip"/>
+              <geom pos="0.00964336 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" group="3" mesh="rf_pip"/>
+              <body name="rf_dip" pos="0.015 0.0143 -0.013" quat="0.5 0.5 -0.5 0.5">
+                <joint name="rf_j2" pos="0 0 0" axis="0 0 -1" range="-0.506 1.885" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" contype="0" conaffinity="0" group="2" density="0" material="rf_black" mesh="rf_dip"/>
+                <geom pos="0.0211334 -0.00843212 0.00978509" quat="0 -1 0 0" group="3" mesh="rf_dip"/>
+                <body name="rf_fingertip" pos="-4.08806e-09 -0.0361 0.0002">
+                  <joint name="rf_j3" pos="0 0 0" axis="0 0 -1" range="-0.366 2.042" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" contype="0" conaffinity="0" group="2" density="0" material="rf_black" mesh="rf_fingertip"/>
+                  <geom pos="0.0132864 -0.00611424 0.0145" quat="0 1 0 0" group="3" mesh="rf_fingertip"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </frame>
+      <frame name="Thumb">
+        <body name="th_world" pos="-0.144874 -0.09004 0.00490089" quat="0.707107 0 0.707107 0">
+          <body name="th_pip_4">
+            <joint name="th_j0" pos="0 0 0" axis="0 0 -1" range="-2.094 0.349" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+            <geom pos="-0.00535664 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" contype="0" conaffinity="0" group="2" density="0" material="th_black" mesh="th_pip"/>
+            <geom pos="-0.00535664 0.0003 0.000784034" quat="0.5 -0.5 -0.5 -0.5" group="3" mesh="th_pip"/>
+            <body name="th_thumb_pip" pos="0 -0.0141 -0.013" quat="0.5 -0.5 -0.5 -0.5">
+              <joint name="th_j1" pos="0 0 0" axis="0 0 -1" range="-2.443 0.47" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+              <geom pos="0.0119619 0 -0.0158526" quat="0.707107 0.707107 0 0" contype="0" conaffinity="0" group="2" density="0" material="th_black" mesh="th_thumb_pip"/>
+              <geom pos="0.0119619 0 -0.0158526" quat="0.707107 0.707107 0 0" group="3" mesh="th_thumb_pip"/>
+              <body name="th_thumb_dip" pos="0 0.0145 -0.017" quat="0.707107 -0.707107 0 0">
+                <joint name="th_j2" pos="0 0 0" axis="0 0 -1" range="-1.2 1.9" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                <geom pos="0.0439687 0.057953 -0.00862868" quat="1 0 0 0" contype="0" conaffinity="0" group="2" density="0" material="th_black" mesh="th_thumb_dip"/>
+                <geom pos="0.0439687 0.057953 -0.00862868" quat="1 0 0 0" group="3" mesh="th_thumb_dip"/>
+                <body pos="0 0.0466 0.0002" quat="0 0 0 -1">
+                  <joint name="th_j3" pos="0 0 0" axis="0 0 -1" range="-1.34 1.88" actuatorfrcrange="-0.95 0.95" armature="0.01"/>
+                  <geom pos="0.0625595 0.0784597 0.0489929" quat="1 0 0 0" contype="0" conaffinity="0" group="2" density="0" material="th_black" mesh="th_thumb_fingertip"/>
+                  <geom pos="0.0625595 0.0784597 0.0489929" quat="1 0 0 0" group="3" mesh="th_thumb_fingertip"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </frame>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="palm_lower" body2="ff_mcp_joint"/>
+    <exclude body1="palm_lower" body2="mf_mcp_joint"/>
+    <exclude body1="palm_lower" body2="rf_mcp_joint"/>
+    <exclude body1="palm_lower" body2="th_pip_4"/>
+    <exclude body1="palm_lower" body2="th_thumb_pip"/>
+    <exclude body1="palm_lower" body2="th_thumb_dip"/>
+    <exclude body1="ff_mcp_joint" body2="ff_dip"/>
+    <exclude body1="mf_mcp_joint" body2="mf_dip"/>
+    <exclude body1="rf_mcp_joint" body2="rf_dip"/>
+  </contact>
+
+  <actuator>
+    <general name="th_a0" joint="th_j0"/>
+    <general name="th_a1" joint="th_j1"/>
+    <general name="th_a2" joint="th_j2"/>
+    <general name="th_a3" joint="th_j3"/>
+    <general name="ff_a0" joint="ff_j0"/>
+    <general name="ff_a1" joint="ff_j1"/>
+    <general name="ff_a2" joint="ff_j2"/>
+    <general name="ff_a3" joint="ff_j3"/>
+    <general name="mf_a0" joint="mf_j0"/>
+    <general name="mf_a1" joint="mf_j1"/>
+    <general name="mf_a2" joint="mf_j2"/>
+    <general name="mf_a3" joint="mf_j3"/>
+    <general name="rf_a0" joint="rf_j0"/>
+    <general name="rf_a1" joint="rf_j1"/>
+    <general name="rf_a2" joint="rf_j2"/>
+    <general name="rf_a3" joint="rf_j3"/>
+  </actuator>
+</mujoco>

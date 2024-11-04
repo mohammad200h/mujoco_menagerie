@@ -181,4 +181,5 @@
     <position class="left_leap" name="14" joint="14"/>
     <position class="left_leap" name="15" joint="15"/>
   </actuator>
+
 </mujoco>
