@@ -1,0 +1,108 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+
+  <default>
+    <geom type="mesh"/>
+    <site group="5"/>
+  </default>
+
+  <asset>
+    <material name="polished_plastic" rgba="0.631 0.659 0.678 1"/>
+    <material name="polished_gold" rgba="0.969 0.878 0.6 1"/>
+    <material name="medium_gloss_plastic" rgba="0.109 0.184 0 1"/>
+    <material name="propeller_plastic" rgba="0.792 0.82 0.933 1"/>
+    <material name="white"/>
+    <material name="body_frame_plastic" rgba="0.102 0.102 0.102 1"/>
+    <material name="burnished_chrome" rgba="0.898 0.898 0.898 1"/>
+    <mesh name="cf2_0" file="../assets/cf2_0.obj"/>
+    <mesh name="cf2_1" file="../assets/cf2_1.obj"/>
+    <mesh name="cf2_2" file="../assets/cf2_2.obj"/>
+    <mesh name="cf2_3" file="../assets/cf2_3.obj"/>
+    <mesh name="cf2_4" file="../assets/cf2_4.obj"/>
+    <mesh name="cf2_5" file="../assets/cf2_5.obj"/>
+    <mesh name="cf2_collision_0" file="../assets/cf2_collision_0.obj"/>
+    <mesh name="cf2_collision_1" file="../assets/cf2_collision_1.obj"/>
+    <mesh name="cf2_collision_2" file="../assets/cf2_collision_2.obj"/>
+    <mesh name="cf2_collision_3" file="../assets/cf2_collision_3.obj"/>
+    <mesh name="cf2_collision_4" file="../assets/cf2_collision_4.obj"/>
+    <mesh name="cf2_collision_5" file="../assets/cf2_collision_5.obj"/>
+    <mesh name="cf2_collision_6" file="../assets/cf2_collision_6.obj"/>
+    <mesh name="cf2_collision_7" file="../assets/cf2_collision_7.obj"/>
+    <mesh name="cf2_collision_8" file="../assets/cf2_collision_8.obj"/>
+    <mesh name="cf2_collision_9" file="../assets/cf2_collision_9.obj"/>
+    <mesh name="cf2_collision_10" file="../assets/cf2_collision_10.obj"/>
+    <mesh name="cf2_collision_11" file="../assets/cf2_collision_11.obj"/>
+    <mesh name="cf2_collision_12" file="../assets/cf2_collision_12.obj"/>
+    <mesh name="cf2_collision_13" file="../assets/cf2_collision_13.obj"/>
+    <mesh name="cf2_collision_14" file="../assets/cf2_collision_14.obj"/>
+    <mesh name="cf2_collision_15" file="../assets/cf2_collision_15.obj"/>
+    <mesh name="cf2_collision_16" file="../assets/cf2_collision_16.obj"/>
+    <mesh name="cf2_collision_17" file="../assets/cf2_collision_17.obj"/>
+    <mesh name="cf2_collision_18" file="../assets/cf2_collision_18.obj"/>
+    <mesh name="cf2_collision_19" file="../assets/cf2_collision_19.obj"/>
+    <mesh name="cf2_collision_20" file="../assets/cf2_collision_20.obj"/>
+    <mesh name="cf2_collision_21" file="../assets/cf2_collision_21.obj"/>
+    <mesh name="cf2_collision_22" file="../assets/cf2_collision_22.obj"/>
+    <mesh name="cf2_collision_23" file="../assets/cf2_collision_23.obj"/>
+    <mesh name="cf2_collision_24" file="../assets/cf2_collision_24.obj"/>
+    <mesh name="cf2_collision_25" file="../assets/cf2_collision_25.obj"/>
+    <mesh name="cf2_collision_26" file="../assets/cf2_collision_26.obj"/>
+    <mesh name="cf2_collision_27" file="../assets/cf2_collision_27.obj"/>
+    <mesh name="cf2_collision_28" file="../assets/cf2_collision_28.obj"/>
+    <mesh name="cf2_collision_29" file="../assets/cf2_collision_29.obj"/>
+    <mesh name="cf2_collision_30" file="../assets/cf2_collision_30.obj"/>
+  </asset>
+
+  <worldbody>
+    <light name="top" pos="0 0 1" dir="0 0 -1"/>
+    <body name="cf2" pos="0 0 0.1">
+      <joint type="free" limited="false" actuatorfrclimited="false"/>
+      <geom name="cf2_0" contype="0" conaffinity="0" group="2" material="propeller_plastic" mesh="cf2_0"/>
+      <geom name="cf2_1" contype="0" conaffinity="0" group="2" material="medium_gloss_plastic" mesh="cf2_1"/>
+      <geom name="cf2_2" contype="0" conaffinity="0" group="2" material="polished_gold" mesh="cf2_2"/>
+      <geom name="cf2_3" contype="0" conaffinity="0" group="2" material="polished_plastic" mesh="cf2_3"/>
+      <geom name="cf2_4" contype="0" conaffinity="0" group="2" material="burnished_chrome" mesh="cf2_4"/>
+      <geom name="cf2_5" contype="0" conaffinity="0" group="2" material="body_frame_plastic" mesh="cf2_5"/>
+      <geom name="cf2_collision_0" group="3" mesh="cf2_collision_0"/>
+      <geom name="cf2_collision_1" group="3" mesh="cf2_collision_1"/>
+      <geom name="cf2_collision_2" group="3" mesh="cf2_collision_2"/>
+      <geom name="cf2_collision_3" group="3" mesh="cf2_collision_3"/>
+      <geom name="cf2_collision_4" group="3" mesh="cf2_collision_4"/>
+      <geom name="cf2_collision_5" group="3" mesh="cf2_collision_5"/>
+      <geom name="cf2_collision_6" group="3" mesh="cf2_collision_6"/>
+      <geom name="cf2_collision_7" group="3" mesh="cf2_collision_7"/>
+      <geom name="cf2_collision_8" group="3" mesh="cf2_collision_8"/>
+      <geom name="cf2_collision_9" group="3" mesh="cf2_collision_9"/>
+      <geom name="cf2_collision_10" group="3" mesh="cf2_collision_10"/>
+      <geom name="cf2_collision_11" group="3" mesh="cf2_collision_11"/>
+      <geom name="cf2_collision_12" group="3" mesh="cf2_collision_12"/>
+      <geom name="cf2_collision_13" group="3" mesh="cf2_collision_13"/>
+      <geom name="cf2_collision_14" group="3" mesh="cf2_collision_14"/>
+      <geom name="cf2_collision_15" group="3" mesh="cf2_collision_15"/>
+      <geom name="cf2_collision_16" group="3" mesh="cf2_collision_16"/>
+      <geom name="cf2_collision_17" group="3" mesh="cf2_collision_17"/>
+      <geom name="cf2_collision_18" group="3" mesh="cf2_collision_18"/>
+      <geom name="cf2_collision_19" group="3" mesh="cf2_collision_19"/>
+      <geom name="cf2_collision_20" group="3" mesh="cf2_collision_20"/>
+      <geom name="cf2_collision_21" group="3" mesh="cf2_collision_21"/>
+      <geom name="cf2_collision_22" group="3" mesh="cf2_collision_22"/>
+      <geom name="cf2_collision_23" group="3" mesh="cf2_collision_23"/>
+      <geom name="cf2_collision_24" group="3" mesh="cf2_collision_24"/>
+      <geom name="cf2_collision_25" group="3" mesh="cf2_collision_25"/>
+      <geom name="cf2_collision_26" group="3" mesh="cf2_collision_26"/>
+      <geom name="cf2_collision_27" group="3" mesh="cf2_collision_27"/>
+      <geom name="cf2_collision_28" group="3" mesh="cf2_collision_28"/>
+      <geom name="cf2_collision_29" group="3" mesh="cf2_collision_29"/>
+      <geom name="cf2_collision_30" group="3" mesh="cf2_collision_30"/>
+      <site name="imu" pos="0 0 0"/>
+      <site name="actuation" pos="0 0 0"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <general name="body_thrust" site="actuation" ctrlrange="0 0.35" gear="0 0 1 0 0 0"/>
+    <general name="x_moment" site="actuation" ctrlrange="-1 1" gear="0 0 0 -1e-05 0 0"/>
+    <general name="y_moment" site="actuation" ctrlrange="-1 1" gear="0 0 0 0 -1e-05 0"/>
+    <general name="z_moment" site="actuation" ctrlrange="-1 1" gear="0 0 0 0 0 -1e-05"/>
+  </actuator>
+</mujoco>

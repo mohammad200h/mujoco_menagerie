@@ -1,0 +1,107 @@
+{
+  "material":[
+    {
+      "name":"polished_plastic",
+      "rgba":[0.631, 0.659, 0.678, 1]
+    },
+    {
+      "name":"polished_gold",
+      "rgba":[0.969, 0.878, 0.6, 1]
+    },
+    {
+      "name":"medium_gloss_plastic",
+      "rgba":[0.109, 0.184, 0.0, 1]
+    },
+    {
+      "name":"propeller_plastic",
+      "rgba":[0.792, 0.820, 0.933, 1]
+    },
+    {
+      "name":"white",
+      "rgba":[1, 1, 1, 1]
+    },
+    {
+      "name":"body_frame_plastic",
+      "rgba":[0.102, 0.102, 0.102, 1]
+    }
+    ,{
+      "name":"burnished_chrome",
+      "rgba":[0.898, 0.898, 0.898, 1]
+    }
+  ],
+  "mesh":[
+    {
+      "prefix":"cf2_",
+      "range":[0,6]
+    },
+    {
+      "prefix":"cf2_collision_",
+      "range":[0,31]
+    }
+  ],
+
+  "geom_col_default": {
+    "group": 3
+  },
+  "geom_vis_default": {
+    "group": 2,
+    "contype": 0,
+    "conaffinity": 0
+  },
+
+
+  "body":{
+    "name":"cf2",
+    "pos" :[0, 0, 0.1],
+    "inertia":[2.3951e-5, 2.3951e-5, 3.2347e-5],
+    "mass":0.027
+  },
+  "geoms":[
+    {
+      "prefix":"cf2_",
+      "range":[0,6],
+      "materials":["propeller_plastic","medium_gloss_plastic",
+            "polished_gold","polished_plastic","burnished_chrome",
+            "body_frame_plastic","white"
+      ]
+    },
+    {
+      "prefix":"cf2_collision_",
+      "range":[0,31]
+    }
+  ],
+  "sites":[{
+    "name":"imu"
+    },
+    {
+      "name":"actuation"
+    }
+  ],
+  "actuation":[
+    {
+      "ctrlrange":[0, 0.35],
+      "gear":[0, 0, 1, 0, 0, 0],
+      "target":"actuation",
+      "name":"body_thrust"
+    },
+    {
+      "ctrlrange":[-1, 1],
+      "gear":[0, 0, 0, -0.00001, 0, 0],
+      "target":"actuation",
+      "name":"x_moment"
+    },
+    {
+      "ctrlrange":[-1, 1],
+      "gear":[0, 0, 0, 0, -0.00001, 0],
+      "target":"actuation",
+      "name":"y_moment"
+    },
+    {
+      "ctrlrange":[-1, 1],
+      "gear":[0, 0, 0, 0, 0, -0.00001],
+      "target":"actuation",
+      "name":"z_moment"
+    }
+  ]
+
+}
