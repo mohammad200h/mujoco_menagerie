@@ -5,8 +5,8 @@ import mujoco as mj
 
 if __name__ == "__main__":
 
-  asset_path = "./assets/"
-  leap_data_file = asset_path+"leap.json"
+  asset_path = "../assets/"
+  leap_data_file = "./leap.json"
 
   with open(leap_data_file, 'r') as file:
     leap_data = json.load(file)
@@ -25,5 +25,4 @@ if __name__ == "__main__":
 
         while viewer.is_running():
             mj.mj_step(model, data)
-            # Visualize at fixed FPS.
             viewer.sync()

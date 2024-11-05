@@ -1,0 +1,35 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+
+  <default>
+    <mesh scale="0.001 0.001 0.001"/>
+  </default>
+
+  <asset>
+    <material name="black" rgba="0.149 0.149 0.149 1"/>
+    <mesh name="spring_link" file="../assets/spring_link.stl" scale="1 1 1"/>
+    <mesh name="follower" file="../assets/follower.stl" scale="1 1 1"/>
+    <mesh name="pad" file="../assets/pad.stl" scale="1 1 1"/>
+    <mesh name="silicone_pad" file="../assets/silicone_pad.stl" scale="1 1 1"/>
+  </asset>
+
+  <worldbody>
+    <body name="spring_link">
+      <joint name="spring_link" pos="0 0 0" axis="1 0 0" springref="2.62" stiffness="0.05" range="-0.296706 0.8" armature="0.001" damping="0.00125"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" mesh="spring_link"/>
+      <geom type="mesh" group="3" mesh="spring_link"/>
+      <body name="follower" pos="0 0.055 0.0375">
+        <joint name="follower" pos="0 -0.018 0.0065" axis="1 0 0" solreflimit="0.005" solimplimit="0.95 0.99 0.001 0 0" range="-0.872664 0.872664" armature="0.001"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" mesh="follower"/>
+        <geom type="mesh" group="3" mesh="follower"/>
+        <body name="pad" pos="0 -0.0189 0.01352">
+          <geom name="pad_box1" size="0.011 0.004 0.009375" pos="0 -0.0026 0.028125" type="box" priority="1" friction="0.7 0 0" solref="0.004" solimp="0.95 0.99 0.001 0 0" mass="0" rgba="0.45 0.45 0.45 1"/>
+          <geom name="pad_box2" size="0.011 0.004 0.009375" pos="0 -0.0026 0.009375" type="box" priority="1" friction="0.6 0 0" solref="0.004" solimp="0.95 0.99 0.001 0 0" mass="0" rgba="0.45 0.45 0.45 1"/>
+          <body name="silicone_pad">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" mesh="silicone_pad"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

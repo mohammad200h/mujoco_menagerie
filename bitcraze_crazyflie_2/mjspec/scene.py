@@ -6,9 +6,9 @@ import mujoco as mj
 if __name__ == "__main__":
 
   asset_path = "../assets/"
-  leap_data_file = "./cf2.json"
+  data_file = "./cf2.json"
 
-  with open(leap_data_file, 'r') as file:
+  with open(data_file, 'r') as file:
     data = json.load(file)
 
   model = create_cf2(data,asset_path)

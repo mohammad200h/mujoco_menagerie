@@ -173,9 +173,9 @@ def create_hand(leap_data:dict, asset_path:str):
   hand.spec.worldbody.add_light(name="top", pos=[0, 0, 1])
   model = hand.spec.compile()
   xml = hand.spec.to_xml()
-  with open("hand.xml", "w") as file:
-    # Write content to the file
-    file.write(xml)
+  with open("leap.xml", "w") as file:
+   # Write content to the file
+   file.write(xml)
 
 
   return model

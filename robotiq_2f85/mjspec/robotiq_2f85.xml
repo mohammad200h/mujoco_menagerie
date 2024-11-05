@@ -1,0 +1,25 @@
+<mujoco model="MuJoCo Model">
+  <compiler angle="radian"/>
+
+  <default>
+    <mesh scale="0.001 0.001 0.001"/>
+  </default>
+
+  <asset>
+    <material name="black" rgba="0.149 0.149 0.149 1"/>
+    <mesh name="base_mount" file="../assets/base_mount.stl" scale="1 1 1"/>
+    <mesh name="base" file="../assets/base.stl" scale="1 1 1"/>
+  </asset>
+
+  <worldbody>
+    <body name="base_mount" pos="0 0 0.007">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" mesh="base_mount"/>
+      <geom type="mesh" group="3" mesh="base_mount"/>
+      <body name="base" pos="0 0 0.0038" quat="0.707107 0 0 -0.707107">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="black" mesh="base"/>
+        <geom type="mesh" group="3" mesh="base"/>
+        <site name="pinch" pos="0 0 0.145" group="5" rgba="0.9 0.9 0.9 1"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
