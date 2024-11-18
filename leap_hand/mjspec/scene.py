@@ -1,4 +1,9 @@
-from hand import create_hand
+from hand import Hand
+
+from data.fingerData import FingerData
+from data.thumbData import ThumbData
+from data.handData import HandData
+
 import json
 import mujoco as mj
 
@@ -6,14 +11,20 @@ import mujoco as mj
 if __name__ == "__main__":
 
   asset_path = "../assets/"
-  leap_data_file = "./leap.json"
+  fingerData = FingerData( asset_path=asset_path)
+  thumbData = ThumbData( asset_path=asset_path)
+  handData = HandData( asset_path=asset_path)
 
-  with open(leap_data_file, 'r') as file:
-    leap_data = json.load(file)
-
-  model = create_hand(leap_data,asset_path)
+  robot = Hand(
+    fingerData,
+    thumbData,
+    handData
+  )
+  model = robot.spec.compile()
 
   data = mj.MjData(model)
+
+  print(robot.spec.to_xml())
 
   # visualization
   with mj.viewer.launch_passive(
