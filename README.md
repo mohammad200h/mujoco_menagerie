@@ -182,6 +182,7 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | WidowX 250 | Trossen Robotics | 8 | [BSD-3-Clause](trossen_wx250s/LICENSE) |✖️|
 | xarm7 | UFACTORY | 7 | [BSD-3-Clause](ufactory_xarm7/LICENSE) |✖️|
 | Gen3 | Kinova Robotics | 7 | [BSD-3-Clause](kinova_gen3/LICENSE) |✖️|
+| SO-ARM100 | The Robot Studio | 5 | [Apache-2.0](trs_so_arm100/LICENSE) |✖️|
 
 **Bipeds.**
 
@@ -219,6 +220,8 @@ Menagerie, see [CONTRIBUTING](CONTRIBUTING.md).
 | Google Robot | Google DeepMind | 9 | [Apache-2.0](google_robot/LICENSE) |✖️|
 | Stretch 2 | Hello Robot | 17 | [Clear BSD](hello_robot_stretch/LICENSE) |✖️|
 | Stretch 3 | Hello Robot | 17 | [Apache-2.0](hello_robot_stretch_3/LICENSE) |✖️|
+| PAL Tiago | PAL Robotics | 12 | [Apache-2.0](pal_tiago/LICENSE) |✖️|
+| PAL Tiago Dual | PAL Robotics | 21 | [Apache-2.0](pal_tiago_dual/LICENSE) |✖️|
 
 **Humanoids.**
 
